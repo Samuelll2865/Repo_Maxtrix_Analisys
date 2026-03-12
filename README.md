@@ -232,6 +232,15 @@ This workflow helps maintain consistency during the semester and reduces the mos
 - It is recommended that all package installations be done only after activating the virtual environment.
 - Students should avoid installing packages globally unless it is absolutely necessary.
 
+### Summary of the main installation commands
+
+    git clone https://github.com/Normando1945/Repo_Maxtrix_Analisys.git
+    cd Repo_Maxtrix_Analisys
+    python -m venv venv
+    venv\Scripts\activate
+    pip install -r requirements.txt
+    pip install -e .
+
 ## General Recommendation
 
 Students are encouraged to keep this repository updated throughout the semester and use it as the main reference point for class examples, numerical implementations, and progressive development of matrix-based structural analysis tools in Python.
