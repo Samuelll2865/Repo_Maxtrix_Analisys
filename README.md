@@ -7,7 +7,7 @@
 ### Introduction to Matrix-Based Analysis of Structures
 
 **Author:** Msc. Ing. Carlos Andrés Celi Sánchez  
-**Semester:** FEB – 2026  
+**Semester:** FEB – 2026
 
 This repository has been created to support the teaching and learning process of the **Matrix Structural Analysis** course during the current academic semester. It will progressively include theoretical notes, Python codes, numerical examples, and class-based implementations, starting from the fundamental concepts of matrix structural analysis and advancing toward more refined formulations for 2D frame elements.
 
@@ -21,7 +21,7 @@ This repository is expected to progressively cover topics such as:
 - Coordinate transformation
 - Global assembly procedures
 - Boundary conditions and system solution
-- Internal forces and displacement recovery
+- Internal force and displacement recovery
 - Class-based Python implementation
 - Advanced 2D frame elements including axial, flexural, and shear deformations
 - Rigid end offsets in matrix-based formulations
@@ -178,9 +178,9 @@ This will allow students to select the correct Python environment when opening n
 
 Inside **Visual Studio Code**, follow these steps:
 
-1. Press **Ctrl + Shift + P**.
+1. Press **Ctrl + Shift + P**
 2. Search for: `Python: Select Interpreter`
-3. Choose the interpreter corresponding to the `venv` environment.
+3. Choose the interpreter corresponding to the `venv` environment
 
 If a notebook is opened, also make sure that the selected kernel is:
 
@@ -213,14 +213,14 @@ This notebook presents the matrix-based formulation of a 2D moment-frame element
 
 For each class session, students are encouraged to follow the workflow below:
 
-1. Open the repository folder in VS Code.
-2. Open the integrated Command Prompt terminal.
-3. Activate the virtual environment.
-4. Verify that the correct Python interpreter has been selected.
-5. Open the corresponding notebook or Python file.
-6. Run the examples step by step.
-7. Modify the examples progressively as discussed in class.
-8. Save the updated work in an organized manner.
+1. Open the repository folder in VS Code
+2. Open the integrated Command Prompt terminal
+3. Activate the virtual environment
+4. Verify that the correct Python interpreter has been selected
+5. Open the corresponding notebook or Python file
+6. Run the examples step by step
+7. Modify the examples progressively as discussed in class
+8. Save the updated work in an organized manner
 
 This workflow helps maintain consistency during the semester and reduces the most common installation and execution errors.
 
@@ -236,7 +236,13 @@ Open **Command Prompt** or the **integrated terminal in VS Code**.
 
     cd Repo_Maxtrix_Analisys
 
-### Step 3. Pull the latest changes
+### Step 3. Activate the virtual environment
+
+If students are using **Command Prompt**, run:
+
+    venv\Scripts\activate
+
+### Step 4. Pull the latest changes
 
     git pull
 
@@ -246,15 +252,9 @@ This command downloads and merges the most recent changes from the remote reposi
 
 Students are encouraged to run `git pull` before starting each class session in order to work with the latest version of the repository.
 
-## Additional Notes
+## Summary of the Main Installation and Update Commands
 
-- If Git is not recognized in the terminal, it must be installed and added correctly to the system path.
-- If Python is not recognized in the terminal, verify that Python was installed correctly and added to the system path.
-- If a notebook does not run, first verify that the correct Python interpreter and Jupyter kernel have been selected.
-- It is recommended that all package installations be done only after activating the virtual environment.
-- Students should avoid installing packages globally unless it is absolutely necessary.
-
-### Summary of the main installation and update commands
+### First-time installation
 
     git clone https://github.com/Normando1945/Repo_Maxtrix_Analisys.git
     cd Repo_Maxtrix_Analisys
@@ -263,15 +263,20 @@ Students are encouraged to run `git pull` before starting each class session in 
     pip install -r requirements.txt
     pip install -e .
 
-### Summary of the main update commands
+### Regular update before class
 
     cd Repo_Maxtrix_Analisys
     venv\Scripts\activate
     git pull
 
-## General Recommendation
+## Additional Notes
 
-Students are encouraged to keep this repository updated throughout the semester and use it as the main reference point for class examples, numerical implementations, and progressive development of matrix-based structural analysis tools in Python.
+- If Git is not recognized in the terminal, it must be installed and added correctly to the system path.
+- If Python is not recognized in the terminal, verify that Python was installed correctly and added to the system path.
+- If a notebook does not run, first verify that the correct Python interpreter and Jupyter kernel have been selected.
+- It is recommended that all package installations be done only after activating the virtual environment.
+- Students should avoid installing packages globally unless it is absolutely necessary.
+- Since the repository is installed in editable mode, updates to the package files will be reflected directly without reinstalling the package in most cases.
 
 ## Important Note for Students
 
@@ -280,3 +285,7 @@ This repository is maintained exclusively by the course author.
 Students are expected to clone the repository and update their local copies during the semester. They should not modify the original online repository.
 
 If students wish to experiment with the code, they are encouraged to do so in their local copies or in personal forks of the repository.
+
+## General Recommendation
+
+Students are encouraged to keep this repository updated throughout the semester and use it as the main reference point for class examples, numerical implementations, and progressive development of matrix-based structural analysis tools in Python.
