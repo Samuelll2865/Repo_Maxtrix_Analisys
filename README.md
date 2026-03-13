@@ -306,6 +306,9 @@ If you use this repository in academic work, class projects, reports, or educati
 Celi Sánchez, C. A. (2026). *Matrix Structural Analysis: Introduction to Matrix-Based Analysis of Structures* [Structural Engineering]. GitHub. https://github.com/Normando1945/Repo_Maxtrix_Analisys
 
 ## License
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License">
+</p>
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
