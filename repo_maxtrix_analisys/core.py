@@ -1,4 +1,7 @@
 import numpy as np
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
 
 #########################################################################################################################################
 #########################################################################################################################################
@@ -65,7 +68,7 @@ class MF_K_T_L_Element2D:
         return K_e                                                                                                  # Return the element stiffness matrix
     
     def transformation_matrix_2D(self):
-        thetha = np.deg2rad(self.thetha)                                                                                        # Using orientation angle
+        thetha = np.deg2rad(self.thetha)                                                                            # Using orientation angle
         
         c = np.cos(thetha)                                                                                          # Cosine of the angle
         s = np.sin(thetha)                                                                                          # Sine of the angle
@@ -111,3 +114,61 @@ class MF_L_elements2D:                                                          
             T_blocks.append(elem.transformation_matrix_2D())                                                        # Append the transformation matrix of the element
 
         return np.vstack(T_blocks)                                                                                  # Return the stacked transformation matrices as a single array
+    
+
+
+#########################################################################################################################################
+#########################################################################################################################################
+########################################################## Matrix Visualizer ############################################################
+#########################################################################################################################################
+#########################################################################################################################################
+
+class M_visual_2D_3D:                                                                                               # Class for visualize any values of a matrix     
+    def __init__(self, Matrix):                                                                                     # Initialize the class with the matrix to be plotted
+        self.ElemDraw = Matrix                                                                                      # Store the input matrix as an internal variable
+
+    def M_visual(self):                                                                                             # Method to generate the 2D and 3D visualization of the matrix values
+
+        ElemDraw = self.ElemDraw                                                                                    # Local variable containing the matrix to be visualized
+
+        fig = plt.figure(figsize=(18, 9))                                                                           # Create the main figure with a wide format
+        fig.suptitle("Representation of Stiffness Matrix Values",                                                   # Add a global title to the figure
+             fontsize=18, fontweight='bold', color=(0, 0, 1))                                                       # Define font size, bold style, and blue color
+        # -----------------------------------------------
+        # Subplot 1: Matrix in 2D
+        # -----------------------------------------------
+        ax0 = fig.add_subplot(1, 2, 1)                                                                              # Create the first subplot for the 2D representation
+        lim = np.max(np.abs(ElemDraw))                                                                              # Compute the maximum absolute value for symmetric color scaling
+        im0 = ax0.imshow(ElemDraw, cmap='seismic', aspect='equal', vmin=-lim, vmax=lim)                             # Display the matrix as a 2D color map
+        cbar0 = fig.colorbar(im0, ax=ax0, pad=0.01, fraction=0.03)                                                  # Add a colorbar associated with the 2D plot
+        cbar0.set_label('Values')                                                                                   # Label the colorbar
+        ax0.set_title('Matrix Values in 2D', fontweight='bold')                                                     # Set the title of the 2D subplot
+        ax0.set_xlabel('GLDs')                                                                                      # Label the x-axis
+        ax0.set_ylabel('GDLs')                                                                                      # Label the y-axis
+
+        # -----------------------------------------------
+        # Subplot 2: Same matrix in 3D
+        # -----------------------------------------------
+        ax1 = fig.add_subplot(1, 2, 2, projection='3d')                                                             # Create the second subplot for the 3D bar representation
+        nrows, ncols = ElemDraw.shape                                                                               # Get the number of rows and columns of the matrix
+        xpos, ypos = np.meshgrid(np.arange(ncols), np.arange(nrows))                                                # Generate the grid positions for columns and rows
+        xpos = xpos.ravel()                                                                                         # Flatten the x positions into a 1D array
+        ypos = ypos.ravel()                                                                                         # Flatten the y positions into a 1D array
+        zpos = np.zeros_like(xpos, dtype=float)                                                                     # Set the base height of all bars at z = 0
+        dx = 0.8 * np.ones_like(zpos)                                                                               # Define the width of each bar in the x direction
+        dy = 0.8 * np.ones_like(zpos)                                                                               # Define the width of each bar in the y direction
+        dz = ElemDraw.ravel()                                                                                       # Flatten the matrix values to use them as bar heights
+        norm = plt.Normalize(vmin=-lim, vmax=lim)                                                                   # Create a normalization object for consistent color scaling
+        colors0 = plt.cm.seismic(norm(dz))                                                                          # Assign colors to each bar according to its value
+        ax1.bar3d(xpos, ypos, zpos, dx, dy, dz, color=colors0, shade=True)                                          # Plot the 3D bars with the corresponding colors
+        ax1.set_xlim(0, ncols)                                                                                      # Set the limits of the x-axis
+        ax1.set_ylim(0, nrows)                                                                                      # Set the limits of the y-axis
+        ax1.set_zlim(-lim, lim)                                                                                     # Set the limits of the z-axis to include positive and negative values
+        ax1.set_box_aspect((ncols, nrows, max(ncols, nrows)*0.8))                                                   # Adjust the 3D box aspect ratio for better visualization
+        ax1.set_title('Matrix Values in 3D', fontweight='bold')                                                     # Set the title of the 3D subplot
+        ax1.set_xlabel('GDLs')                                                                                      # Label the x-axis
+        ax1.set_ylabel('GDLs')                                                                                      # Label the y-axis
+        ax1.set_zlabel('Values')                                                                                    # Label the z-axis
+
+        plt.tight_layout()                                                                                          # Adjust subplot spacing automatically
+        plt.show()                                                                                                  # Display the final figure
