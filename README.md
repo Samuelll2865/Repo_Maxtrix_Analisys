@@ -21,6 +21,12 @@ This repository has been created to support the teaching and learning process of
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License">
 </p>
 
+<p align="center">
+  <a href="https://github.com/Normando1945/Repo_Maxtrix_Analisys/actions/workflows/python-check.yml">
+    <img src="https://github.com/Normando1945/Repo_Maxtrix_Analisys/actions/workflows/python-check.yml/badge.svg" alt="Python Check">
+  </a>
+</p>
+
 
 
 
