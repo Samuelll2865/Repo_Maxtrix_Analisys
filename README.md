@@ -11,24 +11,12 @@
 
 This repository has been created to support the teaching and learning process of the **Matrix Structural Analysis** course during the current academic semester. It will progressively include theoretical notes, Python codes, numerical examples, and class-based implementations, starting from the fundamental concepts of matrix structural analysis and advancing toward more refined formulations for 2D frame elements.
 
-[![Python Check](https://github.com/Normando1945/Repo_Maxtrix_Analisys/actions/workflows/python-check.yml/badge.svg)](https://github.com/Normando1945/Repo_Maxtrix_Analisys/actions/workflows/python-check.yml)
-
-
 <p align="center">
   <a href="https://github.com/Normando1945/Repo_Maxtrix_Analisys/actions/workflows/python-check.yml">
     <img src="https://github.com/Normando1945/Repo_Maxtrix_Analisys/actions/workflows/python-check.yml/badge.svg" alt="Python Check">
   </a>
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License">
 </p>
-
-<p align="center">
-  <a href="https://github.com/Normando1945/Repo_Maxtrix_Analisys/actions/workflows/python-check.yml">
-    <img src="https://github.com/Normando1945/Repo_Maxtrix_Analisys/actions/workflows/python-check.yml/badge.svg" alt="Python Check">
-  </a>
-</p>
-
-
-
 
 ## Course Roadmap
 
