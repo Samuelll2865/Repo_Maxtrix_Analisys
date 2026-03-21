@@ -89,7 +89,10 @@ This helps avoid confusion with terminal commands, file paths, and virtual envir
 
 Once the Windows terminal is open, run:
 
+``` bash
+
     git clone https://github.com/Normando1945/Repo_Maxtrix_Analisys.git
+```
 
 This command will download the repository to the current folder.
 
@@ -97,7 +100,9 @@ This command will download the repository to the current folder.
 
 After cloning the repository, enter the project folder with:
 
+``` bash
     cd Repo_Maxtrix_Analisys
+```
 
 From this point on, all commands should be executed inside this folder.
 
@@ -105,7 +110,9 @@ From this point on, all commands should be executed inside this folder.
 
 Now that the repository already exists on the computer, open it in **Visual Studio Code** by running:
 
+``` bash
     code .
+```
 
 If this command does not work, students can simply open **Visual Studio Code** manually and then select the cloned repository folder.
 
@@ -141,7 +148,9 @@ It is strongly recommended to create a virtual environment so that all students 
 
 Run:
 
+``` bash
     python -m venv venv
+```
 
 This command will create a folder called `venv` inside the repository.
 
@@ -149,7 +158,9 @@ This command will create a folder called `venv` inside the repository.
 
 If students are using **Command Prompt**, run:
 
+``` bash
     venv\Scripts\activate
+```
 
 After activation, `(venv)` should appear at the beginning of the terminal line. This indicates that the virtual environment is active.
 
@@ -157,7 +168,9 @@ After activation, `(venv)` should appear at the beginning of the terminal line. 
 
 Once the virtual environment has been activated, install the required Python libraries with:
 
+``` bash
     pip install -r requirements.txt
+```
 
 This step installs all the packages needed by the repository.
 
@@ -165,7 +178,9 @@ This step installs all the packages needed by the repository.
 
 To allow Python to recognize the package correctly while developing and testing the code, run:
 
+``` bash
     pip install -e .
+```
 
 This is useful because the package can be modified during the semester without reinstalling it every time.
 
@@ -173,11 +188,15 @@ This is useful because the package can be modified during the semester without r
 
 If students are going to work with notebooks in VS Code, it is recommended to also install `ipykernel`:
 
+``` bash
     pip install ipykernel
+```
 
 Then register the environment as a Jupyter kernel:
 
+``` bash
     python -m ipykernel install --user --name=venv --display-name "Python (Matrix Analysis)"
+```
 
 This will allow students to select the correct Python environment when opening notebooks.
 
@@ -199,12 +218,16 @@ A simple way to verify the installation is to open Python and try importing the 
 
 Run:
 
+``` bash
     python
+```
 
 Then type:
 
+``` bash
     import repo_maxtrix_analisys
     print("Package imported successfully")
+```
 
 If no error appears, the installation was completed correctly.
 
@@ -241,17 +264,23 @@ Open **Command Prompt** or the **integrated terminal in VS Code**.
 
 ### Step 2. Move into the repository folder
 
+``` bash
     cd Repo_Maxtrix_Analisys
+```
 
 ### Step 3. Activate the virtual environment
 
 If students are using **Command Prompt**, run:
 
+``` bash
     venv\Scripts\activate
+```
 
 ### Step 4. Pull the latest changes
 
+``` bash
     git pull
+```
 
 This command downloads and merges the most recent changes from the remote repository into the local copy.
 
@@ -263,18 +292,22 @@ Students are encouraged to run `git pull` before starting each class session in 
 
 ### First-time installation
 
+``` bash
     git clone https://github.com/Normando1945/Repo_Maxtrix_Analisys.git
     cd Repo_Maxtrix_Analisys
     python -m venv venv
     venv\Scripts\activate
     pip install -r requirements.txt
     pip install -e .
+```
 
 ### Regular update before class
 
+``` bash
     cd Repo_Maxtrix_Analisys
     venv\Scripts\activate
     git pull
+```
 
 ## Additional Notes
 
@@ -299,6 +332,7 @@ If you use this repository in academic work, class projects, reports, or educati
 
 ### BibTeX
 
+``` bash
     @misc{celi2026matrix,
       author       = {Carlos Andrés Celi Sánchez},
       title        = {Matrix Structural Analysis: Introduction to Matrix-Based Analysis of Structures},
@@ -307,6 +341,7 @@ If you use this repository in academic work, class projects, reports, or educati
       journal      = {GitHub repository},
       howpublished = {\url{https://github.com/Normando1945/Repo_Maxtrix_Analisys}}
     }
+```
 
 ### APA (7th Edition)
 
